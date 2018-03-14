@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+	<class name="cn.scmcc.cutover.domain.CutoverOrder" table="cutoverOrder">
+		<id name="id" type="java.lang.String" length="20">
+			<column name="id"></column>
+			<generator class="uuid"></generator>
+		</id>
+		<property name="cutoverdate" type="date"></property>
+		<property name="grade" type="java.lang.String" length="20"></property>				
+		<property name="orderName" type="java.lang.String" length="200"></property>
+		<property name="orderNumber" type="java.lang.String" length="60"></property>
+		<property name="city" type="java.lang.String" length="40"></property>
+		<property name="department" type="java.lang.String" length="40"></property>
+		<property name="major" type="java.lang.String" length="40"></property>
+		<property name="subject" type="java.lang.String" length="1000"></property>
+		<property name="effect" type="java.lang.String" length="300"></property>
+		<property name="isAffectBusiness" type="java.lang.String" length="20"></property>
+		<property name="isInOrOut" type="java.lang.String" length="20"></property>
+		<property name="inOrOutType" type="java.lang.String" length="100"></property>
+		<property name="inType" type="java.lang.String" length="100"></property>
+		<property name="notInOrOutType" type="java.lang.String" length="100"></property>
+		<property name="isFirstSoftwareChange" type="java.lang.String" length="20"></property>
+		<property name="isAffectDestinationSignalingPoint" type="java.lang.String" length="20"></property>
+		<property name="isAffectMonitoring" type="java.lang.String" length="20"></property>		
+		<property name="applyStartTime" type="timestamp"></property>
+		<property name="applyEndTime" type="timestamp"></property>		
+		<property name="cooperatorName" type="java.lang.String" length="60"></property>
+		<property name="cooperatorPhone" type="java.lang.String" length="60"></property>
+		<property name="affectNetworkElement" type="java.lang.String" length="2000"></property>
+		<property name="emergencyMeasure" type="java.lang.String" length="400"></property>
+		<property name="isNeedDialTest" type="java.lang.String" length="20"></property>
+		<property name="projectReservationID" type="java.lang.String" length="60"></property>
+		<property name="projectReservationResource" type="java.lang.String" length="60"></property>
+		<property name="transmissionClassification" type="java.lang.String" length="60"></property>
+		<property name="isNeedOpticalPowerTest" type="java.lang.String" length="20"></property>
+		<property name="realStartTime" type="timestamp"></property>		
+		<property name="realEndTime" type="timestamp"></property>	
+		<property name="projectReservationCancelTime" type="timestamp"></property>
+		<property name="cutoverState" type="java.lang.String" length="40"></property>
+		<property name="userOpertor" type="java.lang.String" length="40"></property>
+		<property name="cancelReason" type="java.lang.String" length="200"></property>
+		<property name="ReasonOfAlarmFiling" type="java.lang.String" length="200"></property>
+			
+	</class>
+</hibernate-mapping>

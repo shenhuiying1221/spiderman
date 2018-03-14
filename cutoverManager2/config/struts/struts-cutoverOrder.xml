@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts PUBLIC
+	"-//Apache Software Foundation//DTD Struts Configuration 2.1.7//EN"
+	"http://struts.apache.org/dtds/struts-2.1.7.dtd">
+<struts>
+  <package name="cutoverOrder" namespace="/" extends="struts-default">
+  	<action name="cutoverOrderAction_*" method="{1}" class="cutoverOrderAction">
+  		<result name="listAction">WEB-INF/jsp/cutoverOrder/list.jsp</result>
+  		<result name="action2action" type="redirectAction">cutoverOrderAction_getAllCutoverOrder.action</result>
+  		<result name="updateUI">WEB-INF/jsp/cutoverOrder/update.jsp</result>	
+  		<result name="addUI">WEB-INF/jsp/cutoverOrder/add.jsp</result>
+  		<result name="startCutoverUI">WEB-INF/jsp/cutoverOrder/startCutover.jsp</result>
+  		
+  		<result name="cancelCutoverUI">WEB-INF/jsp/cutoverOrder/cancelCutover.jsp</result>
+  		
+  	</action>
+  </package>
+</struts>	

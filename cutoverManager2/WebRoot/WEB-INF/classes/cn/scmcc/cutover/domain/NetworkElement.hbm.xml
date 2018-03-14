@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+	<class name="cn.scmcc.cutover.domain.NetworkElement" table="networdElement">
+		<id name="id" type="java.lang.String" length="20">
+			<column name="id"></column>
+			<generator class="uuid"></generator>			
+		</id>
+		<property name="eomsID" type="java.lang.String" length="40"></property>
+		<property name="projectID" type="java.lang.String" length="40"></property>
+		<property name="projectType" type="java.lang.String" length="100"></property>
+		<property name="elementType" type="java.lang.String" length="100"></property>
+		<property name="neName" type="java.lang.String" length="200"></property>
+		<property name="startTime" type="timestamp"></property>
+		<property name="endTime" type="timestamp"></property>
+		<property name="sourceSystem" type="java.lang.String" length="60"></property>
+		<property name="operator" type="java.lang.String" length="60"></property>
+		<property name="endNeName" type="java.lang.String" length="200"></property>
+		<property name="endSignallingPoint" type="java.lang.String" length="200"></property>
+		<property name="projectName" type="java.lang.String" length="800"></property>			
+	</class>
+</hibernate-mapping>

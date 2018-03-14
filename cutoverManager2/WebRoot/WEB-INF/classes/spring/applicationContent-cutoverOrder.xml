@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:aop="http://www.springframework.org/schema/aop"
+       xmlns:tx="http://www.springframework.org/schema/tx"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+                           http://www.springframework.org/schema/beans/spring-beans-2.5.xsd
+                           http://www.springframework.org/schema/aop 
+                           http://www.springframework.org/schema/aop/spring-aop-2.5.xsd
+                           http://www.springframework.org/schema/context 
+                           http://www.springframework.org/schema/context/spring-context-2.5.xsd
+                           http://www.springframework.org/schema/tx 
+                           http://www.springframework.org/schema/tx/spring-tx-2.5.xsd">				
+	<bean id="cutoverOrderDao" class="cn.scmcc.cutover.dao.impl.CutoverOrderDaoImpl">
+		<property name="sessionFactory">
+			<ref bean="sessionFactory"/>
+		</property>
+	</bean>
+	
+	<bean id="networkElementDao" class="cn.scmcc.cutover.dao.impl.NetworkElementDaoImpl">
+		<property name="sessionFactory">
+			<ref bean="sessionFactory"/>
+		</property>
+	</bean>
+	 
+	<bean id="cutoverOrderService" class="cn.scmcc.cutover.service.impl.CutoverOrderServiceImpl">
+		<property name="cutoverOrderDao">
+			<ref bean="cutoverOrderDao"/>
+		</property>
+	</bean>	
+	
+	<bean id="networkElementService" class="cn.scmcc.cutover.service.impl.NetworkElementServiceImpl">
+		<property name="networkElementDao">
+			<ref bean="networkElementDao"/>
+		</property>
+	</bean>	
+	
+	<bean id="cutoverOrderAction" class="cn.scmcc.cutover.struts2.action.CutoverOrderAction" scope="prototype">
+		<property name="cutoverOrderService">
+			<ref bean="cutoverOrderService"/>
+		</property>
+		<property name="networkElementService">
+			<ref bean="networkElementService"/>
+		</property>
+	</bean>
+	
+</beans>
